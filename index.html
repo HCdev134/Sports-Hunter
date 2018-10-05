@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        img{
+            width: 200px;
+            height: 200px;
+        }
+
+        .onload {
+            text-align: center;
+            font-size: 25px;
+        }
+
+        #news-div {
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+
+ <form>
+
+  <label for="news-input">News Article</label>
+
+  <input type="text" id="news-input"><br>
+
+  <input id="select-article" type="submit" value="GO!">
+ </form>
+
+ <div id="news-div"></div>
+ 
+ <div class="onload"></div>
+
+ <div class="background"></div>
+ 
+    
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+
+
+var APIKey = "7ec980d795c04ff1adf6aff993c1eff9";
+
+var queryURL = 'https://newsapi.org/v2/everything?' +
+          'q=NFL' + '&' +
+          'from=2018-09-29&' +
+          'sortBy=popularity&' +
+          'apiKey=7ec980d795c04ff1adf6aff993c1eff9' + '&' +
+          APIKey;
+
+$.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function(response) {
+        
+        console.log(queryURL);
+
+        console.log(response);
+        
+        var random = Math.floor(Math.random() * 21) + 1;
+        
+        var authorName = $("<p>").text("Author: " + response.articles[random].author);
+        var loadOut = $("<img>").attr("src", response.articles[random].urlToImage);
+        var discription = $("<p>").text("Discription: " + response.articles[random].description);
+        var newstitle = $("<h1>").text(response.articles[random].title);
+
+      $(".onload").empty();
+      $(".onload").prepend(loadOut, newstitle, authorName, discription);
+     
+    });
+
+
+
+
+function searchNews(news){
+    
+    var queryURL = 'https://newsapi.org/v2/everything?' +
+          'q=' + news + '&' +
+          'from=2018-09-29&' +
+          'sortBy=popularity&' +
+          'apiKey=7ec980d795c04ff1adf6aff993c1eff9' + '&' +
+          APIKey;
+
+    var random = Math.floor(Math.random() * 21) + 1;
+          
+
+
+$.ajax({
+    url: queryURL,
+      method: "GET"
+    }).done(function(response) {
+        
+        console.log(queryURL);
+        console.log(response);
+        
+        
+        var authorName = $("<p>").text("Author: " + response.articles[random].author);
+        var loadOut = $("<img>").attr("src", response.articles[random].urlToImage);
+        var discription = $("<p>").text("Discription: " + response.articles[random].description);
+        var newstitle = $("<h1>").text(response.articles[random].title);
+
+      $("#news-div").empty();
+      $("#news-div").append(loadOut, newstitle, authorName, discription);
+     
+    });
+}
+
+
+$("#select-article").on("click", function(event) {
+    // Preventing the button from trying to submit the form
+    event.preventDefault();
+    // Storing the artist name
+    var inputArticle = $("#news-input").val().trim();
+
+    // Running searchNews function(passing in the artist as an argument)
+    searchNews(inputArticle);
+  });
+
+
+
+
+</script>
+</body>
+</html>
