@@ -16,17 +16,18 @@
 
 <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans" rel="stylesheet">
   <style> /* change inline style once done adding images -------------->IMPORTANT */ 
-  .fakeimg {
-      height: 200px;
-      background: #aaa;
-  }
+  #newsDis{
+    font-size: 50px !important;
+}
   </style>
 </head>
 <body>
 
 <div class="jumbotron jumbotron-fluid text-center bg-image1" style="margin-bottom:0">
   <h1 class="display-4">Our Page Name .  .  .</h1>
-  <b><p class="lead mt-1">Responsive page with players and stats!</p></b> 
+  <b><p class="lead mt-1">Responsive page with players and stats!
+
+  </p></b> 
 </div>
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark w-100">
@@ -121,26 +122,32 @@ JAVASCRIPT POSSIBLE ^
       </ul>
       <hr class="d-sm-none">
     </div>
-    <div class="col-sm-8">
-      <h2>TITLE HEADING</h2>
-      <h5>Title description, Dec 7, 2017</h5>
-      <div class="fakeimg">Fake Image</div>
-      <p>description.</p>
-      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    <div class="col-lg-8">
+      <h1 id="titleArt">TITLE HEADING</h1>
+      <h2 id="titleAuth">Author</h2>
+      <div class="fakeimg" id="newsIMG">Fake Image</div>
+      <!-- <p id ="newsDis"></p> -->
       <br>
-      <h2>TITLE HEADING</h2>
+      
+      <!-- <h2>TITLE HEADING</h2>
       <h5>Title description, Sep 2, 2017</h5>
       <div class="fakeimg">Fake Image</div>
-      <p>description..</p>
-      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+      <p>description..</p> -->
+
+      <p id="newsDis">Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+
     </div>
   </div>
 </div>
 
 <div id="semantic-footer" class="jumbotron text-center" style="margin-bottom:0">
-  <p>Footer</p>
+  <p><img src="assets/images/alpha-transparent.jpg" max="250px" width="200px" height="200px" ></p>
   <p class="lead"> &copy; MS, TM, AO, HC</p>
 </div>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.js"></script>
+
+<script type="text/javascript" src="assets/Javascript/app.js"></script>
 
 </body>
 </html>
