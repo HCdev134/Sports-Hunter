@@ -1,9 +1,14 @@
 .bg-image1{
-    background-image: url("../assets/images/soccer-stadium-background-vector-clip-bottom-useProj.jpg"); 
+    background-image: url("../../assets/images/soccer-stadium-background-vector-clip-bottom-useProj.jpg"); 
     background-size: auto ;
-    background-position: top left ; 
-    background-repeat: round ;
+    background-position: left top ;  
+   background-repeat: round ;
+
   
+}
+.nav-typography1{
+    font-family: 'roboto', sans-serif; 
+    font-weight: 700 ; 
 }
 
 /*--------Global Body, Container and Background color Styles and Background-colors(graidents, box shadows, for: Depth to Design */ 
@@ -20,9 +25,24 @@ body{
     background: linear gradient(to bottom, #33ccfa 15%, #335577 90%);
 }
 .container{
-    background-image: url("..assets/images/Sports.png");
+    background-image: url("../../assets/images/wavy-dots.png");
 }
-
+.bg-futurewave1{
+    background: linear-gradient(rgba(20, 200, 200, 0.7) 0%, rgba(229, 243, 28, 0.7)100%); 
+}
+/*logo is a global class for the sportshub logos i made, want them to be minimal and not take up too much time, 
+but am replacing the standard logos with the better ones, so requires a bit more styling 
+this is used for STYLING LINKS BECAUSE THE LOGOS ARE USED AS LINKS AND WILL BE OBVIOUS IN THE UI*/ 
+a.logo1{
+    border: 1px solid black ; 
+    text-decoration: none ; 
+    
+}
+a.logo1:hover{
+    border: 1px solid red; 
+    text-decoration: none ; 
+    color: #000 ; 
+}
 .width-expand{
 width: 99vw; 
 margin: auto;
@@ -40,17 +60,23 @@ margin: auto;
 
 /*----------Carousel attribute stylings TEST 
 DELETE css attributes that aren't needed */ 
-span[data-slide="prev"]{
-    background-color: #ff0066 ;
+/*span[data-slide="prev"]{
+    border: 2px solid red ;
     color: #000 ; 
 }
 span[data-slide="next"]{
-    background-color: #ff0066 ;
+    border: 2px solid red ;
     color: #000 ; 
+} */ 
+.carousel-control-next-icon{
+    padding: 10px ; 
+    border: 2px solid black ; 
+    background-color: #ff0066; 
 }
-
 .carousel-control-prev-icon{
-
-    background-color: orchid ; 
+    padding: 10px ; 
+    border: 2px solid black ; 
+    background-color: #33ccfa ; 
 }
+
 

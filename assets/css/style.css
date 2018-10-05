@@ -6,7 +6,7 @@ body{
 
 }
 .container{
-    background-image: url("../images/wavy-dots.png");
+    background-image: url("../../assets/images/Sports.png");
 }
 /* custom color Classes, global, similar to bootstrap. 
 .bg-gradient-1 bg-custom-1 
@@ -28,13 +28,23 @@ width: 99% ;
 margin: auto ; 
 overflow: hidden; 
 padding: 100px 0px 20px 0px ; 
-background-image: url("wavy-dots.png"); 
+background-image: url("../../assets/images/arab_tile.png"); 
 background-size: auto ;
 background-position: top left ; 
 background-repeat: round ;
-
-
 }
+
+/*--- targeting the big text in the header
+with bootstrap it was done a different way than h1-h6, 
+so it must be targeted using descendent selectors, 
+in order to not mess up the other p.lead(p class="lead") emmet abbr.)) 
+due to style inheritance.  
+need to give it something very SUBTLE on hover */ 
+div.container-fluid > p.lead:hover{
+text-decoration: underline ; 
+text-decoration-color: #33ccff ; 
+}
+
 .head-shadow{
     background: linear-gradient(to bottom, #ffffff  0%, rgba(245, 64, 64, 0.2) 100%); 
     -webkit-box-shadow: inset 0px -9px 73px 5px rgba(0,0,0,0.75);
@@ -56,11 +66,11 @@ margin: auto;
 position: relative; 
 left: 0 ; /* Remove Positioning if it ends up affecting box styles or INHERITENCE later on */ 
 top: 0 ; 
-padding: 100px 0px 20px 0px ; 
+padding: 100px 0px 40px 0px ; 
 text-decoration: underline ; 
 text-decoration-color: #ff0066 ; 
-border-bottom: 2px dashed lightblue; 
-font-family: 'Lato', sans-serif ;
+border-bottom: 2px inset #33cfff; 
+font-family: 'Lato', 'cursive' sans-serif ;
 
 }
 div.topnav{
@@ -104,6 +114,21 @@ div.topnav{
 td:hover{
     text-decoration: underline ;
     text-decoration-color: #000000 ; 
+}
+
+/*----STYLE OF CAROUSEL EXTRAS -----*/ 
+
+.carousel-control-prev-icon{
+    border: 3px groove  #8f1f1f;
+    padding: 15px ; 
+    background-color: #000 ; 
+    color:white ; 
+}
+.carousel-control-next-icon{
+    border: 3px groove #8f1f1f;
+    padding: 15px ; 
+    background-color: #000 ; 
+ 
 }
 /* STYLE OF SPORTS DATA TABLE BELOW CAROUSEL */ 
 table{

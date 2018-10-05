@@ -19,19 +19,19 @@
 <!---First Jumbotron header with ID: first-jumbotron-->
 
 <div class="container-fluid head-shadow width-expand ">
- <p class="lead display-4 text-center" style="font-family: cursive; ">SPORTS HUB </p>
+ <p class="lead display-4 text-center" >SPORTS HUB </p>
 
 
 
 </div>
 <!--Javascript Ids first-jumbotron-->
-
-                <nav class="navbar navbar-expand-lg navbar-light bg-gradient-1 ">
-                        <a class="navbar-brand" href=""><img class="float-right" src="logo-football.png" width="30px" max="38px"></a> 
+        <!---CSS: bg-gradient-1 used on navbar container-->
+                <nav class="navbar navbar-expand-lg navbar-light bg-gradient-1 pt-3 pb-3">
+                        <a id="icon" class="navbar-brand" href=""><img class="float-right" src="assets/images/logo-football.png" width="44px" max="44px"></a> 
                         <!---Logo For navbar can Add Id to change pic? 
                             will automatically change to my inline size? -->
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
-                          <span class="navbar-toggler-icon"></span>
+                          <span class="navbar-toggler-icon"><img class="navbar-toggler" src="assets/images/logo-football.png"></span>
                         </button>
                       
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -90,6 +90,21 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-6 ">
+
+<!---- Main JAVASCRIPT ID: 
+                IDS:   id of MAIN wrapper :  slider
+                IDS: main Wrapper: "slider" data-target="#carousel-slider"  
+
+                CSS OR JQUERY selector Equivalent ... 
+                
+               .ATTR li[data-target="#carousel-slider"]{background:#000; }
+            
+            
+           IDEA : 
+        append new data-target="#carousel-slider 
+        append new 
+        data-slide-to="+3 +4 +5 
+        ADD PICTURES TO THE CAROUSEL"" -->
 
 
                 <div id="slider" class="carousel slide rounded-top" data-ride="carousel">
@@ -185,7 +200,7 @@
 <hr>
 
 <div class="topnav">
-        <a href="#"><img src="assets/images/logo-football.png" width="38px"></a>
+        <a href="#"><img src="assets/images/logo-football.png" width="138px"></a>
         <a href="#">link1</a>
         <a href="#">link3</a>
         <a href="#">link4</a>
