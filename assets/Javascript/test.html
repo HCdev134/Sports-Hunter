@@ -35,7 +35,9 @@ function getPlayers(firstName,lastName){
                 // console.log(data[i]);
                 var player ={
                     Name: data[i].FirstName + " " + data[i].LastName,
-                    Team:data[i].Team
+                    Team:data[i].Team,
+                    Age: data[i].Age,
+                    Number: data[i].Number
                 };
                 console.log(players);
                 players.push(player);
