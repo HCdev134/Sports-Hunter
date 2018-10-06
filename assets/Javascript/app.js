@@ -7,7 +7,8 @@ var queryURL = 'https://newsapi.org/v2/everything?' +
           'apiKey=7ec980d795c04ff1adf6aff993c1eff9' + '&' +
           APIKey;
 
-$.ajax({
+  // API for news article on load
+      $.ajax({
       url: queryURL,
       method: "GET"
     }).then(function(response) {
@@ -18,7 +19,7 @@ $.ajax({
         
         var random = Math.floor(Math.random() * 21) + 1;
         
-        var authorName = $("<p>").text("Author: " + response.articles[random].author);
+        var authorName = response.articles[random].author;
 
         var loadOut = $("<img>").attr("src", response.articles[random].urlToImage);
 
@@ -29,8 +30,9 @@ $.ajax({
       //API news img into img on layout
       
       $("#newsIMG").empty();
-      $("#newsIMG").attr("src", response.articles[random].urlToImage);
+      $("#newsIMG").attr('src', loadOut);
       $("#newsIMG").prepend(loadOut);
+
       
       //Title news api
       $("#titleArt").empty();
@@ -38,7 +40,7 @@ $.ajax({
 
       //News api date
       $("#titleAuth").empty();
-      $("#titleAuth").text("Author: " + response.articles[random].author);
+      $("#titleAuth").text("Author: " + authorName);
 
       $("#newsDis").empty();
       $("#newsDis").text(response.articles[random].description);
@@ -47,6 +49,7 @@ $.ajax({
      
     });
 
+    // API for using input search to find data from API
     function searchNews(news){
     
         var queryURL = 'https://newsapi.org/v2/everything?' +
@@ -80,7 +83,33 @@ $.ajax({
         });
     }
     
+    // showing error because no games currently playing?
+    $(function() {
+      var params = {
+          // Request parameters
+      };
     
+      $.ajax({
+          url: "https://api.fantasydata.net/v3/nfl/scores/XML/GameStats/2018",
+          beforeSend: function(xhrObj){
+              // Request headers
+              xhrObj.setRequestHeader("f63459df4d324742a9ef550a4ad5a83f","{f63459df4d324742a9ef550a4ad5a83f}");
+          },
+          type: "GET",
+          // Request body
+          data: "{body}",
+      })
+      .done(function(data) {
+          alert("success");
+      })
+      .fail(function() {
+          alert("error");
+      });
+  });
+
+
+
+    // on click to search API data for value of the input 
     $("#buttonClickValue").on("click", function(event) {
         // Preventing the button from trying to submit the form
         event.preventDefault();
