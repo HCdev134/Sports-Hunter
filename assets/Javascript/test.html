@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.js"></script>
+<script type=text/javascript>
+
+   
+   
+
+// returns list of players with match firstName lastName
+function getPlayers(firstName,lastName){
+        var players = [];
+
+     var queryURL = "https://api.fantasydata.net/v3/nfl/stats/JSON/Players?key=f63459df4d324742a9ef550a4ad5a83f&Name=Michael";  
+    
+
+    $.ajax({
+        url: queryURL,
+        method:"GET",
+        data:"{body}",
+    })
+    .done(function(data) {
+        alert("success");
+        // console.log(queryURL);
+        // console.log(data);
+        for(var i = 0; i < data.length; i++){
+            if(data[i].FirstName === firstName && data[i].LastName === lastName){
+                // console.log(data[i]);
+                var player ={
+                    Name: data[i].FirstName + " " + data[i].LastName,
+                    Team:data[i].Team
+                };
+                console.log(players);
+                players.push(player);
+            }
+        }
+
+    //     var found_names = $.grep(names, function(v) {
+    //     return v.name === "Joe" && v.age < 30;
+    // });
+
+    })
+    .fail(function() {
+        alert("error");
+    });
+    return players;
+};
+
+
+//make two var playerFirstName= $("#inputButtonFirstName").val().trim()
+//var playerLastName = $("#inputButtonLastName").val().trim
+result = getPlayers("Tom","Brady");
+console.log(result);
+
+
+    
+    
+
+</script>
+
+</body>
+</html>

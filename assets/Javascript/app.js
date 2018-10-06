@@ -90,7 +90,7 @@ var queryURL = 'https://newsapi.org/v2/everything?' +
       };
     
       $.ajax({
-          url: "https://api.fantasydata.net/v3/nfl/scores/XML/GameStats/2018",
+          url: "https://api.fantasydata.net/v3/nfl/scores/XML/GameStats/2017",
           beforeSend: function(xhrObj){
               // Request headers
               xhrObj.setRequestHeader("f63459df4d324742a9ef550a4ad5a83f","{f63459df4d324742a9ef550a4ad5a83f}");
