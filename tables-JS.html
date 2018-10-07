@@ -90,7 +90,40 @@
   </div>
 
   <!-- JavaScript -->
-  <script src="playerAppendLogic.js"></script>
+  <script>
+  
+  $("#add-player-btn").on("click", function() {
+  // event.preventDefault();
+
+  // Grabs user input
+  var playerName = $("#player-name-input").val();
+  var position = $("#position-input").val();
+  var yardage = $("#yardage-input").val();
+  var career = $("#career-highlights-input").val();
+
+  var newRow = $("<tr>").append(
+    $("<td>").html(playerName),
+    $("<td>").text(position),
+    $("<td>").text(yardage),
+    $("<td>").text(career),
+  );
+  
+  // Append the new row to the table
+  $("#player-table > tbody").append(newRow);
+
+  // Clears all of the text-boxes
+  $("#player-name-input").val("");
+  $("#position-input").val("");
+  $("#yardage-input").val("");
+  $("#career-highlights-input").val("");
+
+
+  return false
+
+});
+  
+  
+  </script>
 
 </body>
 
