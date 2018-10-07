@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Employee Tracker</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+  <style>
+    /* #player-table, th, tb {
+      display: inline-block;
+      width: 16.575%;
+    } */
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Employee Tracker -->
+  <div class="container">
+
+    <!-- Jumbotron -->
+    <div class="jumbotron" style="background-color: rgb(202, 175, 175); color: black">
+      <h1 class="text-center">Get Your Sports Stats</h1>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <!-- Add Employee  -->
+        <div class="card mb-4 p-4">
+          <div class="card-body">
+            Player Add
+            <!-- Entry Form -->
+            <form>
+              <div class="form-group row">
+                <label for="employee-name-input">Player Name</label>
+                <input class="form-control" id="player-name-input" placeholder="Enter Player Here" type="text">
+              </div>
+              <div class="form-group row">
+                <label for="role-input">Position</label>
+                <input class="form-control" id="position-input" placeholder="Enter Position" type="text">
+              </div>
+              <div class="form-group row">
+                <label for="start-input">Top Yardage</label>
+                <input class="form-control" id="yardage-input" placeholder="Top Yardage" type="text">
+              </div>
+              <div class="form-group row">
+                <label for="rate-input">Career Highlights</label>
+                <input class="form-control" id="career-highlights-input" placeholder="Career Highlights" type="text">
+              </div>
+              <button class="btn btn-primary float-right" id="add-player-btn">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-12">
+
+        <!-- Current Employees-->
+        <div class="card mb-4">
+          <div class="card-body">
+            Playeah
+            <table class="table table-sm" id="player-table">
+              <thead>
+                <tr>
+                  <th scope="col">Player Name</th>
+                  <th scope="col">Position</th>
+                  <th scope="col">Top Yardage</th>
+                  <th scope="col">Career Highlights</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="playerAppendLogic.js"></script>
+
+</body>
+
+</html>
