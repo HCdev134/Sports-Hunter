@@ -7,19 +7,38 @@
     <title>Document</title>
 </head>
 <body>
+<form>
     
+    <!-- first name -->
+    <label for="userInputFirst">First Name: </label>
+    <input id= "userInputFirst" type="text">
+    
+    <!-- last Name -->
+    <label>Last Name: </label>
+    <input id= "userInputLast" type="text">
+    <input id= "userSearch" type="submit">
+
+    </form>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.js"></script>
 <script type=text/javascript>
 
-   
-   
-
+        //Hunter, add the id for the player input form here where #userSearch is for player stats data
+        $("#userSearch").on('click', function(event){
+            event.preventDefault();
+        var userInputFirst = $("#userInputFirst").val().trim();
+        var userInputLast = $("#userInputLast").val().trim();
+        clearInput();
+        getPlayers(userInputFirst, userInputLast);
+        
+        //console.log(userInputFirst);
+        // console.log(userInputLast);
+    });
 // returns list of players with match firstName lastName
 function getPlayers(firstName,lastName){
         var players = [];
 
      var queryURL = "https://api.fantasydata.net/v3/nfl/stats/JSON/Players?key=f63459df4d324742a9ef550a4ad5a83f&Name=Michael";  
-    
+     
 
     $.ajax({
         url: queryURL,
@@ -27,26 +46,37 @@ function getPlayers(firstName,lastName){
         data:"{body}",
     })
     .done(function(data) {
-        alert("success");
-        // console.log(queryURL);
-        // console.log(data);
+        alert("success"); 
+        
+
         for(var i = 0; i < data.length; i++){
             if(data[i].FirstName === firstName && data[i].LastName === lastName){
-                // console.log(data[i]);
-                var player ={
-                    Name: data[i].FirstName + " " + data[i].LastName,
-                    Team:data[i].Team,
-                    Age: data[i].Age,
-                    Number: data[i].Number
+                
+                // console.log(data);
+
+                //Player Names
+                var playerFirstName = data[i].FirstName ;
+                var playerLastName = data[i].LastName;
+
+                //Player Age
+                var playerAge = data[i].Age;
+
+                //Player Number & Team
+                var playerNumber = data[i].Number;
+                var playerTeam = data[i].Team;
+
+                var player = {
+                    Name: playerFirstName + " " + playerLastName,
+                    Team: playerTeam,
+                    Age: playerAge,
+                    Number: playerNumber
                 };
-                console.log(players);
                 players.push(player);
+                console.log(players);
+                
             }
         }
 
-    //     var found_names = $.grep(names, function(v) {
-    //     return v.name === "Joe" && v.age < 30;
-    // });
 
     })
     .fail(function() {
@@ -58,9 +88,15 @@ function getPlayers(firstName,lastName){
 
 //make two var playerFirstName= $("#inputButtonFirstName").val().trim()
 //var playerLastName = $("#inputButtonLastName").val().trim
-result = getPlayers("Tom","Brady");
-console.log(result);
+// var result = getPlayers("Tom","Brady");
 
+var result = getPlayers(userInputFirst, userInputLast);
+console.log(result)
+
+function clearInput(){
+    $("#userInputFirst").val("");
+    $("#userInputLast").val("");
+}
 
     
     
