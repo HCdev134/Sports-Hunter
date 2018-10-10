@@ -5,8 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body>
+    
+<!-- Employee Tracker -->
+<div class="container">
+
+        <!-- Jumbotron -->
+        <div class="jumbotron" style="background-color: rgb(202, 175, 175); color: black">
+          <h1 class="text-center">Get Your Sports Stats</h1>
+        </div>
+    
+       
+        <div class="row">
+    
+          <div class="col-md-12">
+    
+            <!-- Current Employees-->
+            <div class="card mb-4">
+              <div class="card-body">
+                Playeah
+                <table class="table table-sm" id="player-table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Player Name</th>
+                      <th scope="col">Age</th>
+                      <th scope="col">Position</th>
+                      <th scope="col">Number</th>
+                      <th scope="col">Team</th>
+                      <th scope="col">Height</th>
+                      <th scope="col">Weight</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
 <form>
     
     <!-- first name -->
@@ -19,12 +60,25 @@
     <input id= "userSearch" type="submit">
 
     </form>
+
+
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.js"></script>
 <script type=text/javascript>
-
+    
+    var config = {
+apiKey: "AIzaSyDGPV_2V0cMf8EQbXr2-cw2-SLbT4djRaY",
+authDomain: "recent-user-with-all-use-e8e76.firebaseapp.com",
+databaseURL: "https://tm-project-cc0c0.firebaseio.com/",
+projectId: "recent-user-with-all-use-e8e76",
+storageBucket: ""
+};
+    
+    firebase.initializeApp(config);
+    var database = firebase.database();
+       
         //Hunter, add the id for the player input form here where #userSearch is for player stats data
         $("#userSearch").on('click', function(event){
-            event.preventDefault();
+        event.preventDefault();
         var userInputFirst = $("#userInputFirst").val().trim();
         var userInputLast = $("#userInputLast").val().trim();
         clearInput();
@@ -78,8 +132,41 @@ function getPlayers(firstName,lastName){
                     Height: playerHeight
                 };
                 players.push(player);
+                database.ref().push(player);
                 console.log(players);
                 
+
+                        // Grabs user input
+            var playerName = $("#userSearch").val();
+            
+            var newRow = $("<tr>").append(
+                $("<td>").html(player.Name),
+                $("<td>").text(playerAge),
+                $("<td>").text(playerPosition),
+                $("<td>").text(playerNumber),
+                $("<td>").text(playerTeam),
+                $("<td>").text(playerHeight),
+                $("<td>").text(playerWeight)
+            );
+            
+            // Append the new row to the table
+            $("#player-table > tbody").append(newRow);
+
+            return false;
+
+            
+            
+            
+            // scrap this table
+            // database.ref().on("child_added", function (snapshot){
+            
+            // var Name = snapshot.val().Name;
+            // var Age = snapshot.val().Age;
+            // var Team = snapshot.val().Team;
+            
+    
+            // $("#playerData").append("<tr><td>" + "Name: " + player.Name + "</td><td>"  + playerAge + "</td><td>" + "</td><td>" + player.Team + "</td></tr>");
+            //      });
                 
             }
         }
@@ -98,7 +185,7 @@ function getPlayers(firstName,lastName){
 // var result = getPlayers("Tom","Brady");
 
 var result = getPlayers(userInputFirst, userInputLast);
-console.log(result)
+console.log(result);
 
 function clearInput(){
     $("#userInputFirst").val("");
