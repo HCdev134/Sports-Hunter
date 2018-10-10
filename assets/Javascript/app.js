@@ -82,32 +82,6 @@ var queryURL = 'https://newsapi.org/v2/everything?' +
          
         });
     }
-    
-    // showing error because no games currently playing?
-    $(function() {
-      var params = {
-          // Request parameters
-      };
-    
-      $.ajax({
-          url: "https://api.fantasydata.net/v3/nfl/scores/XML/GameStats/2017",
-          beforeSend: function(xhrObj){
-              // Request headers
-              xhrObj.setRequestHeader("f63459df4d324742a9ef550a4ad5a83f","{f63459df4d324742a9ef550a4ad5a83f}");
-          },
-          type: "GET",
-          // Request body
-          data: "{body}",
-      })
-      .done(function(data) {
-          alert("success");
-      })
-      .fail(function() {
-          alert("error");
-      });
-  });
-
-
 
     // on click to search API data for value of the input 
     $("#buttonClickValue").on("click", function(event) {

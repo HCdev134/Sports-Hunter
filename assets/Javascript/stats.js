@@ -1,3 +1,16 @@
+var config = {
+    apiKey: "AIzaSyDGPV_2V0cMf8EQbXr2-cw2-SLbT4djRaY",
+    authDomain: "recent-user-with-all-use-e8e76.firebaseapp.com",
+    databaseURL: "https://tm-project-cc0c0.firebaseio.com/",
+    projectId: "recent-user-with-all-use-e8e76",
+    storageBucket: ""
+    };
+        
+        firebase.initializeApp(config);
+        var database = firebase.database();
+           
+
+
 //Hunter, add the id for the player input form here where #userSearch is for player stats data
 $("#userSearch").on('click', function(event){
     event.preventDefault();
@@ -43,7 +56,6 @@ for(var i = 0; i < data.length; i++){
         var playerNumber = data[i].Number;
         var playerTeam = data[i].Team;
         var playerPosition = data[i].FantasyPosition;
-        var playerCollege = data[i].College;
 
         var player = {
             Name: playerFirstName + " " + playerLastName,
@@ -52,12 +64,30 @@ for(var i = 0; i < data.length; i++){
             Number: playerNumber,
             Position:playerPosition,
             Weight: playerWeight,
-            Height: playerHeight,
-            College: playerCollege
+            Height: playerHeight
         };
         players.push(player);
+        database.ref().push(player);
         console.log(players);
         
+
+    // Grabs user input
+    var playerName = $("#userSearch").val();
+    
+    var newRow = $("<tr>").append(
+        $("<td>").html(player.Name),
+        $("<td>").text(playerAge),
+        $("<td>").text(playerPosition),
+        $("<td>").text(playerNumber),
+        $("<td>").text(playerTeam),
+        $("<td>").text(playerHeight),
+        $("<td>").text(playerWeight)
+    );
+    
+    // Append the new row to the table
+    $("#player-table > tbody").append(newRow);
+
+    return false;
         
     }
 }
@@ -70,13 +100,8 @@ alert("error");
 return players;
 };
 
-
-//make two var playerFirstName= $("#inputButtonFirstName").val().trim()
-//var playerLastName = $("#inputButtonLastName").val().trim
-// var result = getPlayers("Tom","Brady");
-
 var result = getPlayers(userInputFirst, userInputLast);
-console.log(result)
+console.log(result);
 
 function clearInput(){
 $("#userInputFirst").val("");
