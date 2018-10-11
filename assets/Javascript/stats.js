@@ -35,8 +35,8 @@ method:"GET",
 data:"{body}",
 })
 .done(function(data) {
-alert("success"); 
-console.log(data);
+// alert("success"); 
+// console.log(data);
 
 for(var i = 0; i < data.length; i++){
     if(data[i].FirstName === firstName && data[i].LastName === lastName){
@@ -95,7 +95,7 @@ for(var i = 0; i < data.length; i++){
 
 })
 .fail(function() {
-alert("error");
+// alert("error");
 });
 return players;
 };

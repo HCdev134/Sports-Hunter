@@ -5,6 +5,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- favicon -->
+  <link rel="shortcut icon" type="image/png" href="assets/images/download.jpg"/>
+
+
   <!----Bootstrap Template Styling-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -16,15 +20,35 @@
 
 <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans" rel="stylesheet">
   <style> /* change inline style once done adding images -------------->IMPORTANT */ 
+  #newsDis{
+    font-size:20px;
+  }
+
+  a{
+    text-align: center;
+  }
+
+  .container{
+    background-image: url("assets/images/Sports.png");
+}
+
+.head-shadow{
+    background: linear-gradient(to bottom, #ffffff  0%, rgba(245, 64, 64, 0.2) 100%); 
+    -webkit-box-shadow: inset 0px -9px 73px 5px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px -9px 73px 5px rgba(0,0,0,0.75);
+    box-shadow: inset 0px -9px 73px 5px rgba(0,0,0,0.75);
+}
 
   </style>
 </head>
 <body>
 
-<div class="jumbotron jumbotron-fluid text-center bg-image1" style="margin-bottom:0">
-  <h1 class="display-4">Our Page Name .  .  .</h1>
-  <b><p class="lead mt-1">Responsive page with players and stats!</p></b> 
-</div>
+    <div class="container-fluid head-shadow width-expand ">
+        <p class="lead display-4 text-center" style="font-family: cursive; ">SPORTS HUNTER </p>
+       
+       
+       
+       </div>
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark w-100">
   <!-- <a class="navbar-brand float-right" href="#"><img src="assets/images/logo-football.png" width="73px" ></a> -->
@@ -35,17 +59,17 @@
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">
       <li class="nav-item ml-5">
-        <a class="nav-link ml-1" href="layout.html">Our Site</a>
+        <a class="nav-link ml-1" href="layout.html"><h1>Stats Page</h1></a>
       </li>
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link ml-1" href="layout.html#semantic-footer">To Bottom</a>
-      </li>
-      <li class="nav-item">
+      </li> -->
+      <!-- <li class="nav-item">
         <a class="nav-link ml-1" href="#">Link2</a>
-      </li> 
+      </li>  -->
       <form class="form-inline my-2 my-lg-0 ml-5 pl-5" style="padding-left: 200px; " > <!---padding and margin add up only to next breakpoint on the right -->
-      <input id="inputSearchValue" class="form-control mr-sm-2 float-right" type="search" placeholder="Search" aria-label="Search">
-      <button id="buttonClickValue" class="btn btn-outline-success my-2 my-sm-0 float-right" type="submit">Search For Sports Pics</button>
+      <input id="video-input" class="form-control mr-sm-2 float-right" type="search" placeholder="Search" aria-label="Search">
+      <button id="select-video" class="btn btn-outline-success my-2 my-sm-0 float-right" type="submit">Search For Sports News/Videos</button>
       </form>
    
     </ul>
@@ -101,31 +125,41 @@ JAVASCRIPT POSSIBLE ^
               <span class="carousel-control-next-icon"></span>
             </a>   
             </div> <!------Add small carousel if possible-->
-      <p class="lead"> some info about our website</p>
+      
     <h3 class="display-4">Other Sports Links</h3>
+
       <ul class="nav nav-pills flex-column">
+
         <li class="nav-item">
-          <a class="nav-link active" href="#">Active</a>
+          <a class="nav-link active" href="https://sports.yahoo.com/" target="_blank">Yahoo Sports</a>
         </li>
+        <br>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link active" href="http://www.espn.com/" target="_blank">ESPN</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Link</a>
-        </li>
-        <a class="nav-link">nav link end</a>
-        <!-- <a href="#"><img src="assets/images/logo-football.png" width="43px">football logo</a> -->
+        <br><br>
+      
       </ul>
+
       <hr class="d-sm-none">
+
     </div>
+
     <div class="col-lg-8">
+      <!-- Title -->
       <h1 id="titleArt">TITLE HEADING</h1>
+      <!-- Author -->
       <h2 id="titleAuth">Author</h2>
-      <div class="fakeimg" id="newsIMG">Fake Image</div>
+      <!-- Source -->
+      <a id="source" target="_blank">Read More From the Source</a>
+      <!-- Summary -->
+      <p id="newsDis">Error Reload</p>
+      <!-- IMG -->
+      <div class="fakeimg" id="newsIMG"><img  max="500px" width="500px" height="500px">Error Reload</div>
     
       <br>
         
-      <p id="newsDis">Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+      
 
     </div>
   </div>
