@@ -42,15 +42,9 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                           <ul class="navbar-nav mr-auto">
                             <li class="nav-item active">
-                              <a class="nav-link"  href="index.html"><h3>Home</h3> <span class="sr-only">(current, placeholder only?)</span></a>
+                              <a class="nav-link"  href="index.html"><h3 id="home">Home</h3> <span class="sr-only">(current, placeholder only?)</span></a>
                             </li>
-                            <!-- <li class="nav-item">
-                              <a class="nav-link" href="logo-football.png">Link</a>
-                            </li> -->
-                            <!-- <li class="nav-item dropdown">
-                              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                Dropdown-Menu
-                              </a> -->
+                            
                             <!----------!--------------
                             !IDs: -------------------------.> 
                             *Javascript IDs used here: <a> ID # =  stats-dropdown, player dropdown-->
@@ -162,15 +156,7 @@
                           <span class="carousel-control-next-icon"></span>
                         </a>   
                         </div>
-                     
-            
-        
-  <!-----2nd column of carousel, white space or small description-->
-                 <!---- ISN'T KEEPING ALIGNED IN ROW FOR SOME REASON, ,KEEPS NESTING -->
-      
-                       
-                  <!-----2nd column of carousel, white space or small description-->
-                  <!----Replace tooltips with bootstrap 4 tooltips-->
+                
         </div>
                 <div class="col-lg-12 jumbotron jumbotron-fluid " title="whitespace __ tooltip -- replace tooltip with BS-JStips">  
                   <!-- title -->
@@ -191,121 +177,11 @@
  </div>
  </div>               
                  
-
-
-  
-<!-- <div class="container">
-    <div class="row">
-        <div class="col-lg-5 bg-success">&nbsp; 
-                <p class="lead mt-3" >our carousel description / important message 
-                    goes here and should be centered with CSS eventually.  
-                </p>
-<!----White space-->
-                
-                
-
-        
-    <!-- </div>
-    <div class="col-lg-7 bg-light">
-
-    <p class="">sports...</p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem quibusdam sed explicabo, modi doloremque pariatur soluta accusantium? Distinctio aspernatur quos accusantium ipsa id labore a, illum velit at suscipit iure officiis, repellat cum. Voluptatum quisquam exercitationem repellendus dicta quaerat!
-   <strong>sports Lorem </strong>  </div> -->
-   
-
-
-    
 </div>
-<!----CAROUSEL NOT WORKING IN BOOSTRAP 4-->
-<!----GRID ALSO IS NOT WRAPPING---->     
-      
-  <!--commenting out the Table for now
-  
-            
-            USED to be a table in here, can probably comment that out or delete entiely
-            WAS going to reference some table data next to the picture, 
-            that will be in the 2nd layout of what the person searches. 
-            MODAL or regular link? 
-            WHERE will all the regular links be pointing? --->
-
-
-         
-
-
-
-
-
 
 <hr>
 
-<!-- <div class="topnav">
-        <a href="#"><img src="assets/images/logo-football.png" width="38px"></a>
-        <a href="#">link1</a>
-        <a href="#">link3</a>
-        <a href="#">link4</a>
-        <a href="#">link5</a>
-        
-    </div> -->
-    
-<!---Below here will be the javascript append table-->
-<!-- <button id="btn1">append data button</button> -->
-
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script>
-
- var createRow = function(data) {
-    // Create a new table row element
-   var tRow = $("<tr>");
-
-    // Methods run on jQuery selectors return the selector they we run on
-    // This is why we can create and save a reference to a td in the same statement we update its text
-    var titleTd = $("<td>").text(response.Articles.Source.Title);
-    var playerTd = $("<td>").text(response.Articles.source.player);
-  //  var actorsTd = $("<td>").text(data.Actors);
-      
-    // Append the newly created table data to the table row
-    tRow.append(titleTd, yearTd, actorsTd);
-    // Append the table row to the table body
-    $("tbody").append(tRow);
-  }; 
-
-  // The search OMDB function takes a movie, searches the Sports/newspai.org api for it, and then passes the data to createRow
-  //OR this is what we will need to do, like searchOMBD or searchBandsInTown solution, append table data??? 
- var queryURL = "https://newsapi.org/v2/top-headlines?country=us&apiKey=a3187684d5c34dd9820561e092ca66cb"; 
-    $.ajax({
-      url: queryURL,
-      method: "GET"
-    }).then(function(response) {
-
-      // Printing the entire object to console
-      console.log(response);
-
-      // Constructing HTML containing the artist information
-      var playerName = $("<h1>").text(response.Articles.Source.Title);
-      var playerQURL = $("<a>").attr("href", response.url).append(artistName);
-    /*  var playerImage = $("<img>").attr("src", response.thumb_url);
-      var trackerCount = $("<h2>").text(response.tracker_count + " fans tracking this artist");
-      var upcomingEvents = $("<h2>").text(response.upcoming_event_count + " upcoming events");
-      var goToArtist = $("<a>").attr("href", response.url).text("See Tour Dates"); */
-
-      // Empty the contents of the artist-div, append the new artist content
-      $("#artist-div").empty();
-      $("#artist-div").append(artistURL, artistImage, trackerCount, upcomingEvents, goToArtist);
-    });
-  
-
-  // Event handler for new technology to search for API data
-  $("#select-video").on("click", function(event) {
-    // Preventing the button from trying to submit the form
-    event.preventDefault();
-    // Storing the artist name
-    var inputTopic = $("#video-input").val().trim();
-
-    // Running the searchBandsInTown function(passing in the artist as an argument)
-    searchNews(inputTopic);
-  });
-</script>
 <script type="text/javascript" src="assets/Javascript/stats.js"></script>
 <script type="text/javascript" src="assets/Javascript/app.js"></script>
 </body>

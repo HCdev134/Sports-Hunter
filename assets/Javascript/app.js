@@ -14,7 +14,7 @@ var queryURL = 'https://newsapi.org/v2/everything?' +
     }).then(function(response) {
         
         console.log(queryURL);
-
+        
         console.log(response);
         
         var random = Math.floor(Math.random() * 19) + 1;
@@ -65,17 +65,18 @@ var queryURL = 'https://newsapi.org/v2/everything?' +
               'apiKey=7ec980d795c04ff1adf6aff993c1eff9' + '&' +
               APIKey;
     
-        var random = Math.floor(Math.random() * 21) + 1;
+        var random = Math.floor(Math.random() * 17) + 3;
               
-    
+        
     
     $.ajax({
         url: queryURL,
           method: "GET"
         }).done(function(response) {
             
-            console.log(queryURL);
-            console.log(response);
+            // console.log(queryURL);
+            // console.log(response);
+            
             
             
             var authorName = $("<p>").text("Author: " + response.articles[random].author);
@@ -89,13 +90,14 @@ var queryURL = 'https://newsapi.org/v2/everything?' +
         });
     }
 
-    // on click to search API data for value of the input 
-    $("#buttonClickValue").on("click", function(event) {
+    // Event handler for new technology to search for API data
+    $("#select-video").on("click", function(event) {
         // Preventing the button from trying to submit the form
         event.preventDefault();
         // Storing the artist name
-        var inputArticle = $("#inputSearchValue").val().trim();
+        var inputArticle = $("#video-input").val().trim();
     
         // Running searchNews function(passing in the artist as an argument)
-        searchNews(inputArticle);
+        searchNews(inputTopic);
+        
       });
