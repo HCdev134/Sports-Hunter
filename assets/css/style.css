@@ -6,7 +6,7 @@ body{
 
 }
 .container{
-    background-image: url("../images/wavy-dots.png");
+    /* background-image: url("../images/wavy-dots.png"); */
 }
 /* custom color Classes, global, similar to bootstrap. 
 .bg-gradient-1 bg-custom-1 
@@ -112,3 +112,21 @@ table{
     margin: auto ; 
 }
 
+#newsIMG {
+   padding-left:70px;
+}
+
+
+#titleArt,
+#titleAuth{
+    text-align: center;
+}
+
+#newsDis{
+    text-align: center;
+    font-size: 20px;
+}
+
+#home{
+    padding-right:950px;
+}
