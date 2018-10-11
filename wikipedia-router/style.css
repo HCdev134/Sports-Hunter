@@ -1,0 +1,10 @@
+body {
+  background: lightblue;
+  text-align: center;
+  margin: 30px;
+}
+
+.btn {
+  margin: 10px;
+  width: 300px;
+}
